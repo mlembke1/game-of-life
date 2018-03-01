@@ -43,7 +43,6 @@ $(document).ready(function () {
       delete activeCells[rowCallString]
     }
 
-    debugger
     // console.log(rowCallString);
   }
 
