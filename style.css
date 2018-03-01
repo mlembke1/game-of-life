@@ -9,8 +9,15 @@ table tr td {
   border: 1px solid tomato;
   cursor: pointer;
   transition: .25s;
+  color: tomato;
+  background-color: white;
 }
 
 table tr td:hover {
+  background-color: tomato;
+}
+
+.on {
+  color: white;
   background-color: tomato;
 }
