@@ -2,3 +2,9 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
 
 }
+
+table tr td {
+  width: 10px;
+  height: 10px;
+  border: 1px solid tomato;
+}

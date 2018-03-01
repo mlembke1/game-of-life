@@ -1,16 +1,33 @@
 $(document).ready(function () {
+  const maxRows = 20
+  const maxCols = 20
 
   // SET INITIAL UI STATE
   $('#stop-tick-btn').attr('disabled', true)
 
-  $('#dump-config-btn').click(dumpBtnClick)
+  $('#dump-config-btn').click(dumpConfigBtnClick)
   $('#clear-btn').click(clearBtnClick)
   $('#one-tick-btn').click(oneTickBtnClick)
-  $('#start-tick-btn').click(startBtnClick)
-  $('#stop-tick-btn').click(stopBtnClick)
+  $('#start-tick-btn').click(startTickBtnClick)
+  $('#stop-tick-btn').click(stopTickBtnClick)
+
+  // DRAW INITIAL GRID
+  displayUIGrid()
+
+  // UI GRID FUNCTIONS
+  function displayUIGrid() {
+    for (let i = 0; i < maxRows; i++) {
+      const row = $('<tr>')
+      for (let j = 0; j < maxCols; j++) {
+        const cell = $('<td>')
+        row.append(cell)
+      }
+      $('#ui-grid').append(row)
+    }
+  }
 
   // BUTTON EVENT HANDLERS
-  function stopBtnClick(event) {
+  function stopTickBtnClick(event) {
     event.preventDefault()
 
     $('#dump-config-btn').removeAttr('disabled')
@@ -28,7 +45,7 @@ $(document).ready(function () {
     console.log('oneTickBtnClick()')
   }
 
-  function startBtnClick(event) {
+  function startTickBtnClick(event) {
     event.preventDefault()
 
     $('#dump-config-btn').attr('disabled', true)
@@ -46,7 +63,7 @@ $(document).ready(function () {
     console.log('clearBtnClick()')
   }
 
-  function dumpBtnClick(event) {
+  function dumpConfigBtnClick(event) {
     event.preventDefault()
     console.log('dumpConfigBtnClick()')
   }
