@@ -80,6 +80,8 @@ $(document).ready(function () {
 
   function clearBtnClick(event) {
     event.preventDefault()
+    $('td').removeClass('on')
+    activeCells = {}
     console.log('clearBtnClick()')
   }
 
