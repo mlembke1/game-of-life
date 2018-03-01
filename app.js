@@ -20,10 +20,19 @@ $(document).ready(function () {
       const row = $('<tr>')
       for (let j = 0; j < maxCols; j++) {
         const cell = $('<td>')
+        const rowCallString = `${i}, ${j}`
+        cell.attr('data-row-col', rowCallString)
+        cell.click(uiGridCellClick)
         row.append(cell)
       }
       $('#ui-grid').append(row)
     }
+  }
+
+  function uiGridCellClick(event){
+    event.preventDefault()
+    const rowCallString = $(this).attr('data-row-col')
+    console.log(rowCallString);
   }
 
   // BUTTON EVENT HANDLERS
